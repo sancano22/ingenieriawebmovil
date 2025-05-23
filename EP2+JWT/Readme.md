@@ -50,7 +50,7 @@ ionic serve
 
       - POST /api/users/login → retorna JWT
 
-      - GET /api/users/perfil → retorna perfil del usuario (requiere token)
+      - GET /api/users/profile → retorna perfil del usuario (requiere token)
 
 **Asegúrate de que el CORS esté habilitado**  en el backend para permitir llamadas desde Ionic:
 ```bash
