@@ -16,7 +16,12 @@ Asegúrate de tener instalados:
   /my-project
 │
 ├── backend/         # Node.js + Express
-│   ├── index.js
+│   ├── app.js
+    ├── controllers
+    ├── models
+    ├── routes
+    ├── middlewares
+    ├── config
 │   └── package.json
 │
 └── frontend/        # Ionic Angular
