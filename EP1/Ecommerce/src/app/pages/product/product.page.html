@@ -1,0 +1,31 @@
+<app-header></app-header>
+<ion-content [fullscreen]="true">
+<ion-grid fixed>
+   <ion-row>
+    <ion-col 
+        size="12"
+        sizeSm="6"
+        sizeMd="4"
+        sizeLg="3"
+        sizeXl="2" *ngFor="let item of listaProductos">
+    <ion-card>
+         <ion-img *ngIf="item.image" [src]="item.image" alt="{{ item.name }}"></ion-img>
+        <ion-card-header>
+            <ion-card-title>{{ item.name }}</ion-card-title>
+            <ion-card-subtitle>
+                {{ item.price}} | {{item.currency }}
+              </ion-card-subtitle>
+        </ion-card-header> 
+            <ion-card-content>
+              <p>{{ item.description }}</p>
+              <ion-chip *ngFor="let t of item.tags" color="primary" outline>{{ t }}</ion-chip>
+              <div class="stock" *ngIf="item.stock !== undefined">
+                Stock: <strong [class.low]="item.stock! <= 5">{{ item.stock }}</strong>
+              </div>
+              <ion-button expand="block" color="secondary" (click)="agregar(item)">Agregar</ion-button>
+            </ion-card-content>
+    </ion-card>
+ </ion-col>
+</ion-row>
+</ion-grid>
+</ion-content>
